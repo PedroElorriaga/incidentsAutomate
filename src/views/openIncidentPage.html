@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="create-incident">
+        <div class="main-content">
+            <h1>Abrir chamado</h1>
+            <p>Preencha as informações e clique em <span>Criar Chamado</span></p>
+            <div class="form-content">
+                <form class="form-credentials" method="post" action="http://localhost:3000/create-incident">
+                    <label for="credential">PID ou EID</label><br>
+                    <textarea placeholder="Ex: john.joe" class="credential" name="credential" id="credential" cols="50"
+                        rows="1"></textarea><br>
+
+                    <label for="description">Descrição</label><br>
+                    <textarea placeholder="Resuma o problema" class="description" name="description" id="description"
+                        cols="50" rows="2"></textarea><br>
+
+                    <button class="btn-event" type="submit" onclick="createIncident()">Criar Chamado</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>Desenvolvido por © PedroElorriaga</footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
