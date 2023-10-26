@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/img/iconfav.png">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <title>Criar incidente</title>
 </head>
 
 <body>
@@ -14,14 +15,15 @@
             <h1>Abrir chamado</h1>
             <p>Preencha as informações e clique em <span>Criar Chamado</span></p>
             <div class="form-content">
-                <form class="form-credentials" method="post" action="http://localhost:3000/create-incident">
+                <form class="form-credentials" method="post"
+                    action="https://login.microsoftonline.com/e0793d39-0939-496d-b129-198edd916feb/oauth2/token">
                     <label for="credential">PID ou EID</label><br>
-                    <textarea placeholder="Ex: john.joe" class="credential" name="credential" id="credential" cols="50"
+                    <textarea placeholder="Ex: john.joe" class="credential" name="credential" id="credential" cols="65"
                         rows="1"></textarea><br>
 
                     <label for="description">Descrição</label><br>
                     <textarea placeholder="Resuma o problema" class="description" name="description" id="description"
-                        cols="50" rows="2"></textarea><br>
+                        cols="65" rows="2"></textarea><br>
 
                     <button class="btn-event" type="submit" onclick="createIncident()">Criar Chamado</button>
                 </form>

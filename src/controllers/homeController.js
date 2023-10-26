@@ -3,7 +3,7 @@ class FuncoesHome {
         return res.render('openIncidentPage');
     }
 
-    createIncident(req, res) {
+    async createIncident(req, res) {
         return res.json({ "Status": "Chamado criado", "body": req.body });
     }
 }

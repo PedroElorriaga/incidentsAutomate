@@ -8,6 +8,7 @@
 
 body {
     background-color: rgb(250, 253, 255);
+    font-size: 20px;
 }
 
 span {
@@ -32,6 +33,7 @@ footer {
     padding: 20px;
     border: 2px solid rgb(124, 124, 124);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 3px;
 }
 
 .form-content {
@@ -66,4 +68,8 @@ button {
 .description.erro,
 .credential.erro {
     border: 1px dashed rgba(255, 3, 3, 0.703);
+}
+
+.error-msg {
+    font-size: 14px;
 }

@@ -28,14 +28,12 @@ credential.addEventListener('keydown', (e) => {
 const descriptionEmpty = () => {
     if (!description.value) {
         description.setAttribute('class', 'description erro');
-        description.focus();
         createErrorMessage('Descrição', 'O campo de Descrição não pode estar vazio');
         anyEmptyField = true;
     }
 
     if (!credential.value) {
         credential.setAttribute('class', 'credential erro');
-        credential.focus();
         createErrorMessage('Credenciais', 'O campo de Credenciais não pode estar vazio');
         anyEmptyField = true;
     }
@@ -45,12 +43,14 @@ const createErrorMessage = (tag, msg) => {
     if (tag === 'Credenciais') {
         tagErrorCredential.innerText = `${msg}*`
         forms.insertBefore(tagErrorCredential, credential);
+        tagErrorCredential.setAttribute('class', 'error-msg');
         tagErrorCredential.style.color = 'red';
     }
 
     if (tag === 'Descrição') {
         tagErrorDescription.innerText = `${msg}*`
         forms.insertBefore(tagErrorDescription, description);
+        tagErrorDescription.setAttribute('class', 'error-msg');
         tagErrorDescription.style.color = 'red';
     }
 }
@@ -60,7 +60,6 @@ const checkLengthPID = (pid) => {
     if (Number.isInteger(numberPID)) {
         if (pid.length < 8 || pid.length > 8) {
             credential.setAttribute('class', 'credential erro');
-            credential.focus();
             createErrorMessage('Credenciais', 'PID inválido');
             return false;
         }
