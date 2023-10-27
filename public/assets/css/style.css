@@ -73,3 +73,7 @@ button {
 .error-msg {
     font-size: 14px;
 }
+
+.load-content {
+    text-align: center;
+}
