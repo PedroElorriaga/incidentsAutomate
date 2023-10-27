@@ -4,6 +4,7 @@ const button = document.querySelector('.btn-event');
 const forms = document.querySelector('.form-credentials');
 const tagErrorDescription = document.createElement('p');
 const tagErrorCredential = document.createElement('p');
+const loadingTag = document.querySelector('#gif-loading');
 let anyEmptyField = false;
 let shouldPrevent = true;
 
@@ -72,6 +73,7 @@ const createIncident = () => {
 
     if (!anyEmptyField) {
         if (checkLengthPID(credential.value)) {
+            loadingTag.setAttribute('hidden');
             shouldPrevent = false;
         }
     }
