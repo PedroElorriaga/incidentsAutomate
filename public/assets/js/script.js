@@ -5,6 +5,7 @@ const forms = document.querySelector('.form-credentials');
 const tagErrorDescription = document.createElement('p');
 const tagErrorCredential = document.createElement('p');
 const loadingTag = document.querySelector('#gif-loading');
+
 let anyEmptyField = false;
 let shouldPrevent = true;
 
@@ -26,17 +27,23 @@ credential.addEventListener('keydown', (e) => {
     anyEmptyField = false;
 });
 
+const hideLoadGif = () => {
+    loadingTag.setAttribute('hidden', 'true');
+}
+
 const descriptionEmpty = () => {
     if (!description.value) {
         description.setAttribute('class', 'description erro');
         createErrorMessage('Descrição', 'O campo de Descrição não pode estar vazio');
         anyEmptyField = true;
+        shouldPrevent = true;
     }
 
     if (!credential.value) {
         credential.setAttribute('class', 'credential erro');
         createErrorMessage('Credenciais', 'O campo de Credenciais não pode estar vazio');
         anyEmptyField = true;
+        shouldPrevent = true;
     }
 };
 
@@ -62,6 +69,7 @@ const checkLengthPID = (pid) => {
         if (pid.length < 8 || pid.length > 8) {
             credential.setAttribute('class', 'credential erro');
             createErrorMessage('Credenciais', 'PID inválido');
+            shouldPrevent = true;
             return false;
         }
     }
@@ -73,8 +81,10 @@ const createIncident = () => {
 
     if (!anyEmptyField) {
         if (checkLengthPID(credential.value)) {
-            loadingTag.setAttribute('hidden');
+            loadingTag.removeAttribute('hidden');
             shouldPrevent = false;
         }
     }
 }
+
+hideLoadGif();
