@@ -69,6 +69,7 @@ const checkLengthPID = (pid) => {
         if (pid.length < 8 || pid.length > 8) {
             credential.setAttribute('class', 'credential erro');
             createErrorMessage('Credenciais', 'PID inválido');
+            shouldPrevent = true;
             return false;
         }
     }
