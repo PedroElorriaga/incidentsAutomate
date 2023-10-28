@@ -4,7 +4,8 @@ class FuncoesHome {
     }
 
     async createIncident(req, res) {
-        return res.json({ "Status": "Chamado criado", "body": req.body });
+        return res.json({ "body": req.body }); // DESENVOLVIMENTO !!!!!
+        // return res.redirect('/'); -- ATIVAR EM PRODUÇÃO !!!!!
     }
 }
 
